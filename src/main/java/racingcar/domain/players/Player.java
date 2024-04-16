@@ -3,12 +3,17 @@ package racingcar.domain.players;
 public class Player {
     private final Name name;
 
-    private final Distance distance;
+    private Distance distance;
 
-
-    public Player(Name name, Distance distance) {
-        this.name = name;
-        this.distance = distance;
+    public Player(String name) {
+        this.name = new Name(name);
     }
 
+    public String getName() {
+        return name.getName();
+    }
+
+    public Distance getDistance() {
+        return distance;
+    }
 }

@@ -11,8 +11,6 @@ public class InputView {
 
         final List<String> names = Parser.parseByDelimiter(input, ",");
 
-        System.out.println(names);
-
         return Parser.trim(names);
     }
     public String readTryCount() {
