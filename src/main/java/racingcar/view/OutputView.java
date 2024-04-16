@@ -1,6 +1,6 @@
-package view;
+package racingcar.view;
 
-public class ResultView {
+public class OutputView {
     public static void printWinners(Object winners) {
     }
 }

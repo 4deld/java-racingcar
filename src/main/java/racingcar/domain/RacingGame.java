@@ -1,4 +1,4 @@
-package domain;
+package racingcar.domain;
 
 public class RacingGame {
     public RacingGame(Object carNames, Object tryCount) {
@@ -7,6 +7,4 @@ public class RacingGame {
     public void race() {
     }
 
-    public Object getWinners() {
-    }
 }
