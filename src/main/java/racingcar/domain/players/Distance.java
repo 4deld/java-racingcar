@@ -1,9 +1,21 @@
 package racingcar.domain.players;
 
-public class Distance {
-    private final String distance="";
+import racingcar.domain.random.Random;
 
-    public void moveForward(){
+public class Distance {
+    private String distance="";
+
+    private void move(){
+        final Random random = new Random();
+        if(random.getRandom()>=4)
+            moveForward();
     }
 
+    public void moveForward(){
+        this.distance+="-";
+    }
+
+    public String getDistance() {
+        return distance;
+    }
 }

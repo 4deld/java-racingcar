@@ -1,6 +1,6 @@
 package racingcar.domain.trycount;
 
-import domain.trycount.TryCount;
+import racingcar.domain.trycount.TryCount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

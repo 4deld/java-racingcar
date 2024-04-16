@@ -2,6 +2,7 @@ package racingcar.controller;
 
 import racingcar.domain.players.Player;
 import racingcar.domain.players.Players;
+import racingcar.domain.trycount.TryCount;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -20,17 +21,26 @@ public class RacingCarController {
     public void run() {
         final Players players = getPlayers();
         players.getPlayers();
+
+        final TryCount tryCount = getTryCount();
+        System.out.println(tryCount.getTryCount());
+
+
+    }
+
+    private TryCount getTryCount() {
+        return inputView.readTryCount();
     }
 
     private Players getPlayers() {
         final List<Player> players = new ArrayList<>();
-
         players.addAll(createPlayers());
 
         return new Players(players);
     }
     private List<Player> createPlayers() {
         final List<String> playerNames = inputView.readNames();
+
         return playerNames.stream()
                 .map(Player::new)
                 .collect(Collectors.toList());

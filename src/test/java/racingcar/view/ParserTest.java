@@ -1,7 +1,7 @@
 package racingcar.view;
 
 import org.junit.jupiter.api.Test;
-import view.Parser;
+import racingcar.view.Parser;
 
 import java.util.List;
 
