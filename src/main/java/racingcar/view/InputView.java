@@ -1,7 +1,6 @@
 package racingcar.view;
 
 import org.kokodak.Console;
-import racingcar.domain.trycount.TryCount;
 
 import java.util.List;
 
@@ -14,10 +13,9 @@ public class InputView {
 
         return Parser.trim(names);
     }
-    public TryCount readTryCount() {
-        System.out.println();
+    public String readTryCount() {
         System.out.println("시도할 회수는 몇회인가요?");
 
-        return new TryCount(Console.readLine());
+        return Console.readLine();
     }
 }

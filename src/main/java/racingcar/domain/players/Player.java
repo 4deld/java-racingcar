@@ -16,4 +16,8 @@ public class Player {
     public String getDistance() {
         return distance.getDistance();
     }
+
+    public void race() {
+        distance.move();
+    }
 }

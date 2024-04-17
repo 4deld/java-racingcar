@@ -5,13 +5,13 @@ import racingcar.domain.random.Random;
 public class Distance {
     private String distance="";
 
-    private void move(){
+    public void move(){
         final Random random = new Random();
         if(random.getRandom()>=4)
             moveForward();
     }
 
-    public void moveForward(){
+    private void moveForward(){
         this.distance+="-";
     }
 
