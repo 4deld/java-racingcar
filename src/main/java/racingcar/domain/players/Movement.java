@@ -2,8 +2,8 @@ package racingcar.domain.players;
 
 import racingcar.domain.random.Random;
 
-public class Distance {
-    private String distance="";
+public class Movement {
+    private String movement ="";
 
     public void move(){
         final Random random = new Random();
@@ -12,10 +12,10 @@ public class Distance {
     }
 
     private void moveForward(){
-        this.distance+="-";
+        this.movement +="-";
     }
 
-    public String getDistance() {
-        return distance;
+    public String getMovement() {
+        return movement;
     }
 }

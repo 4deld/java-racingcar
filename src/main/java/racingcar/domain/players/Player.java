@@ -2,22 +2,26 @@ package racingcar.domain.players;
 
 public class Player {
     private final Name name;
-    private Distance distance;
+    private Movement movement;
 
     public Player(String name) {
         this.name = new Name(name);
-        this.distance = new Distance();
+        this.movement = new Movement();
     }
 
     public String getName() {
         return name.getName();
     }
 
-    public String getDistance() {
-        return distance.getDistance();
+    public String getMovement() {
+        return movement.getMovement();
+    }
+
+    public int getDistance() {
+        return movement.getMovement().length();
     }
 
     public void race() {
-        distance.move();
+        movement.move();
     }
 }

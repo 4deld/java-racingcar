@@ -4,24 +4,24 @@ import racingcar.domain.players.Player;
 
 public class PlayerResponse {
     private final String name;
-    private final String distance;
+    private final String movement;
 
-    private PlayerResponse(final String name, final String distance) {
+    private PlayerResponse(final String name, final String movement) {
         this.name = name;
-        this.distance = distance;
+        this.movement = movement;
     }
 
     public static PlayerResponse from(final Player player) {
         final String name = player.getName();
-        final String distance = player.getDistance();
-        return new PlayerResponse(name, distance);
+        final String movement = player.getMovement();
+        return new PlayerResponse(name, movement);
     }
 
     public String getName() {
         return name;
     }
-    public String getDistance() {
-        return distance;
+    public String getMovement() {
+        return movement;
     }
 
 }

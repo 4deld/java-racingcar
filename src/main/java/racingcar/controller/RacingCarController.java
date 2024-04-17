@@ -22,27 +22,35 @@ public class RacingCarController {
     }
     public void run() {
         final Players players = getPlayers();
-
         final TryCount tryCount = getTryCount();
-
         final RacingGame racingGame = initRacingGame(players, tryCount);
 
-
-        for(int i=0; i<tryCount.getTryCount(); i++){
-            race(racingGame);
-            for(Player p :players.getPlayers()){
-                printb(p);
-            }
-
-        }
+        PlayGame(racingGame);
 
         printResult(racingGame);
-
-
     }
 
-    private void printb(final Player player) {
-            outputView.printa(PlayerResponse.from(player));
+    private void PlayGame(RacingGame racingGame) {
+        printResultMessage();
+        final int tryCount = racingGame.getTryCount();
+        for(int i=0; i<tryCount; i++){
+            race(racingGame);
+            printPlayersData(racingGame);
+        }
+    }
+
+    private void printResultMessage() {
+        outputView.printResultMessage();
+    }
+
+    private void printPlayersData(RacingGame racingGame) {
+        for(Player p :racingGame.getPlayers()){
+            printPlayerData(p);
+        }
+    }
+
+    private void printPlayerData(final Player player) {
+        outputView.printPlayerData(PlayerResponse.from(player));
     }
 
     private void race(final RacingGame racingGame) {
@@ -50,6 +58,15 @@ public class RacingCarController {
     }
 
     private void printResult(RacingGame racingGame) {
+        final List<PlayerResponse> playerResponses = getPlayerResponses(racingGame.findWinners());
+
+        outputView.printResult(playerResponses);
+    }
+
+    private List<PlayerResponse> getPlayerResponses(final List<Player> players) {
+        return players.stream()
+                .map(PlayerResponse::from)
+                .collect(Collectors.toList());
     }
 
     private RacingGame initRacingGame(Players players, TryCount tryCount) {
