@@ -18,4 +18,9 @@ public class Movement {
     public String getMovement() {
         return movement;
     }
+
+    public int getDistance() {
+        return movement.length();
+    }
+
 }

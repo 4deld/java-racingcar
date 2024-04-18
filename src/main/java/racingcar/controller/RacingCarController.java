@@ -30,7 +30,7 @@ public class RacingCarController {
         printResult(racingGame);
     }
 
-    private void PlayGame(RacingGame racingGame) {
+    private void PlayGame(final RacingGame racingGame) {
         printResultMessage();
         final int tryCount = racingGame.getTryCount();
         for(int i=0; i<tryCount; i++){
@@ -43,10 +43,11 @@ public class RacingCarController {
         outputView.printResultMessage();
     }
 
-    private void printPlayersData(RacingGame racingGame) {
+    private void printPlayersData(final RacingGame racingGame) {
         for(Player p :racingGame.getPlayers()){
             printPlayerData(p);
         }
+        outputView.println();
     }
 
     private void printPlayerData(final Player player) {
@@ -70,9 +71,7 @@ public class RacingCarController {
     }
 
     private RacingGame initRacingGame(Players players, TryCount tryCount) {
-        final RacingGame racingGame = new RacingGame(players, tryCount);
-
-        return racingGame;
+        return new RacingGame(players, tryCount);
     }
 
     private TryCount getTryCount() {

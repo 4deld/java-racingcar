@@ -28,7 +28,6 @@ public class OutputView {
     }
 
     public void printResult(final List<PlayerResponse> players) {
-        System.out.println();
         System.out.println(format("{0}가 최종 우승했습니다.", getNamesFormat(players)));
     }
     private String getNamesFormat(final List<PlayerResponse> players) {
@@ -37,4 +36,7 @@ public class OutputView {
                 .collect(Collectors.joining(", "));
     }
 
+    public void println() {
+        System.out.println();
+    }
 }

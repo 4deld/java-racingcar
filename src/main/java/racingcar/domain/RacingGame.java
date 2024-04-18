@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 public class RacingGame {
     private final Players players;
-
     private final TryCount tryCount;
 
     public RacingGame(Players players, TryCount tryCount) {
