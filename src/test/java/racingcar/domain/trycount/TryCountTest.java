@@ -10,7 +10,7 @@ public class TryCountTest {
 
     @DisplayName("횟수가 정수가 아니면 예외가 발생한다.")
     @ParameterizedTest
-    @ValueSource(strings = {"100j", "aaaa", "@@", "-50@800"})
+    @ValueSource(strings = {"100j", "aaaa10","bbbb"})
     void ValueIsNotAnInteger(String value) {
         assertThatThrownBy(() -> new TryCount(value))
                 .isInstanceOf(IllegalArgumentException.class)

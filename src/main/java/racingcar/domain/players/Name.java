@@ -19,7 +19,7 @@ public class Name {
 
     private void validateNullAndBlank(final String input) {
         if (input == null || input.isBlank()) {
-            throw new IllegalArgumentException("[ERROR] 이름은 존재해야 합니다. 현재 이름: " + input);
+            throw new IllegalArgumentException("[ERROR] 이름이 존재하지 않습니다.");
         }
     }
 

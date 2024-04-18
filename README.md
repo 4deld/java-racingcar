@@ -26,7 +26,7 @@ graph TD
 
 ### RacingGame
 
-- [x] Player와 Trycount 관리한다.
+- [x] Players와 Trycount 관리한다.
 
 ### Players
 
